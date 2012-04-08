@@ -22,6 +22,18 @@ public class DebuggerConnector {
 		return (debug!=null);
 	}
 	
+	public boolean isBreak(String id){
+		if(isConnected()&&debug.isEnabled()){
+			return debug.isBreak(pdf,id);
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean isBreak(){
+		return isBreak("");
+	}
+	
 	public boolean Console(String msg,String id){
 		if(isConnected()&&debug.isEnabled()){
 			debug.sendConsole(pdf,id,msg);

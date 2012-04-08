@@ -1,0 +1,5 @@
+name: DebuggerSample
+main: me.spywhere.DebuggerSample.DebuggerSample
+version: 0.1.1
+description: >
+    Sample plugin for debugger
