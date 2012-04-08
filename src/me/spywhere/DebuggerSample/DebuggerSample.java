@@ -19,7 +19,7 @@ public class DebuggerSample extends JavaPlugin implements Listener{
 		getServer().getPluginManager().registerEvents(this, this);
 		dc = new DebuggerConnector(getServer().getPluginManager(),pdf);
 		if(dc.isConnected()){
-			//Debugger Connected
+			//Debugger Connected.
 			log.info("["+pdf.getName()+"] Debugger plugin found.");	
 		}
 		if(dc.Console("Hello, World!")){
@@ -36,6 +36,7 @@ public class DebuggerSample extends JavaPlugin implements Listener{
 	
 	@EventHandler
 	public final void onBlockPlace(BlockPlaceEvent event) {
+		//If breakpoint is set, cancel the event.
 		if(dc.isBreak("msg")){event.setCancelled(true);}
 		if(event.getBlockPlaced().getType()==Material.TORCH){
 			event.getPlayer().sendMessage("Torch Placed!!!");
